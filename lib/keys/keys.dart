@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ui_update_demo/keys/checkable_todo_item.dart';
 
-import 'package:ui_update_demo/keys/todo_item.dart';
+//import 'package:ui_update_demo/keys/todo_item.dart';
 
 class Todo {
   const Todo(this.text, this.priority);
@@ -69,7 +70,9 @@ class _KeysState extends State<Keys> {
             children: [
               // for (final todo in _orderedTodos) TodoItem(todo.text, todo.priority),
               for (final todo in _orderedTodos)
-                TodoItem(
+                CheckableTodoItem(
+                  key: ValueKey(todo.text), // bcuz todotexts are unique, now after doing this our states will move with our todoitems or widgets.
+                  // we can also pass object by using ObjectKey(todo) todo is an object , valueKey is light though.
                   todo.text,
                   todo.priority,
                 ),
