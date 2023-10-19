@@ -71,8 +71,10 @@ class _KeysState extends State<Keys> {
               // for (final todo in _orderedTodos) TodoItem(todo.text, todo.priority),
               for (final todo in _orderedTodos)
                 CheckableTodoItem(
-                  key: ValueKey(todo.text), // bcuz todotexts are unique, now after doing this our states will move with our todoitems or widgets.
-                  // we can also pass object by using ObjectKey(todo) todo is an object , valueKey is light though.
+                  key: ValueKey(todo.text), // bcuz todotexts are unique, now after 
+                  //doing this our states will update with our todoitems or widgets.
+                  // we can also pass object as a key by using ObjectKey(todo), todo is an object, //
+                  //valueKey is light though.
                   todo.text,
                   todo.priority,
                 ),
